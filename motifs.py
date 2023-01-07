@@ -12,4 +12,4 @@ for idx, line in enumerate(file_data, 1):
 
     if (helper > 0):
       sequence = file_data[0].replace("\n", "")
-      print(sequence + "\t" + str(len(line)) + "\t" + str(helper))
+      print(sequence + "\t" + str(len(line)) + "\t" + str(helper) + "\t" + str(idx))
