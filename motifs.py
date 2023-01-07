@@ -1,17 +1,17 @@
-filename_input = input('Insert your file into here\n')
+from pydoc import stripid
 
-filename = open(filename_input, 'r')
-my_file = filename.readlines()
+file_path = input('Insert your file into here\n')
+
+file = open(file_path, 'r')
+file_data = file.readlines()
 
 res_array = []
 
-for idx, line in enumerate(my_file, 1):
-  is_present = line.find('AGCT') > 0
+for idx, line in enumerate(file_data, 1):
+    helper = line.find('AGCT')
 
-  res_array.append(line.find('AGCT'))
-  
-  if (is_present):
-    print('Motif found at line \t', idx)
-    print(f'Sequence lenght %d \t' % len(line))
+    res_array.append(helper)
 
-print(res_array.sort())
+    if (helper > 0):
+      sequence = file_data[0].replace("\n", "")
+      print(sequence + "\t" + str(len(line)) + "\t" + str(helper))
