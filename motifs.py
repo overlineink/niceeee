@@ -1,5 +1,3 @@
-from pydoc import stripid
-
 file_path = input('Insert your file into here\n')
 
 file = open(file_path, 'r')
